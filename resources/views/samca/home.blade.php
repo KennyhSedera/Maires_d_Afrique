@@ -98,7 +98,7 @@
         <div class="max-w-7xl mx-auto">
             <!-- Logo Header -->
             <div class="text-center mb-12" style="animation: float 3s ease-in-out infinite;">
-                <div class="glass-strong rounded-3xl p-8 inline-block shadow-2xl">
+                <div class="glass-strong rounded-3xl p-8 inline-block bg-white shadow-2xl">
                     <img src="{{ asset('images/logo.png') }}" alt="Maires d'Afrique" class="max-w-xs mx-auto"
                         onerror="this.style.display='none'">
                 </div>
@@ -119,7 +119,7 @@
             </div>
 
             <!-- Main Glass Container -->
-            <div class="glass-strong rounded-3xl p-6 md:p-12 shadow-2xl">
+            <div class="">
                 <!-- Introduction -->
                 <div class="space-y-6 text-lg leading-relaxed text-white mb-12">
                     <div class="glass rounded-2xl p-6 border-l-4 border-purple-400 hover:glass-strong transition-all">

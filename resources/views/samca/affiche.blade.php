@@ -107,7 +107,7 @@
     </div>
 
     <!-- Main Content -->
-    <div class="container mx-auto px-4 pb-20 relative z-10">
+    <div class=" mx-auto px-4 pb-20 relative z-10">
         <div class="max-w-6xl mx-auto">
             <!-- Image Card -->
             {{-- <div class="glass-strong rounded-3xl p-4 md:p-8 shadow-2xl mb-12">
@@ -116,7 +116,7 @@
             </div> --}}
 
             <!-- Info Section -->
-            <div class="glass-strong rounded-3xl p-6 md:p-10 shadow-2xl text-white">
+            <div class="rounded-3xl p-6 md:p-10 text-white">
                 <h3 class="text-3xl md:text-4xl font-black mb-8 md:mb-10 flex items-center gap-3">
                     <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg"
                         style="animation: float 3s ease-in-out infinite;">

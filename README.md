@@ -43,3 +43,4 @@ php artisan cache:clear
 
 #Lancer le serveur Laravel
 php artisan serve
+npm run dev

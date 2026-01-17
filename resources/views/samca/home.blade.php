@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maires d'Afrique - Accueil</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="icon" href="/maires-afrique-logo.jpeg" sizes="any">
     <link rel="icon" href="/maires-afrique-logo.jpeg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/maires-afrique-logo.jpeg">
@@ -14,11 +15,11 @@
 
             0%,
             100% {
-                transform: translateY(0px);
+                transform: translateY(0px) rotate(0deg);
             }
 
             50% {
-                transform: translateY(-20px);
+                transform: translateY(-30px) rotate(2deg);
             }
         }
 
@@ -36,57 +37,124 @@
             }
         }
 
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(168, 85, 247, 0.8);
+            }
+        }
+
         .animate-gradient {
-            background-size: 200% 200%;
-            animation: gradient 15s ease infinite;
+            background-size: 400% 400%;
+            animation: gradient 20s ease infinite;
         }
 
         .glass {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
         .glass-strong {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(30px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(35px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            background-size: 1000px 100%;
+            animation: shimmer 3s infinite;
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px rgba(168, 85, 247, 0.5),
+                0 0 40px rgba(168, 85, 247, 0.3);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-12px) scale(1.02);
+        }
+
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(59, 130, 246, 0.2));
+            border-radius: 1.5rem;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1.5rem;
+            padding: 2px;
+            background: linear-gradient(135deg, #a855f7, #3b82f6);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
         }
     </style>
 </head>
 
 <body
-    class="min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 animate-gradient overflow-x-hidden">
-    <!-- Animated Background Blobs -->
+    class="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-blue-950 animate-gradient overflow-x-hidden">
+
+    <!-- Enhanced Background Elements -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none">
         <div
-            class="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse">
+            class="absolute -top-40 -right-40 w-96 h-96 bg-purple-500 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-pulse">
         </div>
-        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-pulse"
             style="animation-delay: 2s;"></div>
-        <div class="absolute top-1/2 left-1/2 w-80 h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
+        <div class="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse"
             style="animation-delay: 4s;"></div>
+
+        <!-- Particles -->
+        <div class="absolute top-20 left-20 w-2 h-2 bg-white rounded-full animate-pulse"></div>
+        <div class="absolute top-40 right-40 w-1 h-1 bg-purple-300 rounded-full animate-pulse"
+            style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-40 left-60 w-1.5 h-1.5 bg-blue-300 rounded-full animate-pulse"
+            style="animation-delay: 2s;"></div>
     </div>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 glass-strong shadow-2xl">
-        <div class="container mx-auto px-4 py-3">
+    <nav class="sticky top-0 z-50 glass-strong shadow-2xl border-b border-white/10">
+        <div class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between flex-wrap gap-4">
                 <a href="{{ route('home') }}"
-                    class="flex items-center gap-3 bg-white rounded-lg font-bold text-2xl hover:scale-110 transition-all duration-300">
+                    class="flex items-center gap-3 px-2 bg-white rounded-lg font-bold text-2xl hover:scale-110 transition-all duration-300">
                     <img src="{{ asset('images/logo.png') }}" alt="Maires d'Afrique" class="h-14 mx-auto"
                         onerror="this.style.display='none'">
                 </a>
                 <div class="flex gap-3">
                     <a href="{{ route('samca.affiche') }}"
-                        class="px-6 py-3 glass text-white rounded-2xl font-medium transition-all hover:glass-strong hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/30">
-                        <span class="hidden md:inline">🌍 SAMCA</span>
-                        <span class="md:hidden">🌍</span>
+                        class="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-2xl font-semibold transition-all hover:shadow-lg hover:shadow-purple-500/50 hover:-translate-y-1 flex items-center gap-2">
+                        <span class="text-xl">🌍</span>
+                        <span class="hidden md:inline">SAMCA</span>
                     </a>
                     <a href="{{ route('samca.magazine') }}"
-                        class="px-6 py-3 glass text-white rounded-2xl font-medium transition-all hover:glass-strong hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/30">
-                        <span class="hidden md:inline">📰 Magazine</span>
-                        <span class="md:hidden">📰</span>
+                        class="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl font-semibold transition-all hover:shadow-lg hover:shadow-blue-500/50 hover:-translate-y-1 flex items-center gap-2">
+                        <span class="text-xl">📰</span>
+                        <span class="hidden md:inline">Magazine</span>
                     </a>
                 </div>
             </div>
@@ -96,181 +164,227 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-12 md:py-20 relative z-10">
         <div class="max-w-7xl mx-auto">
-            <!-- Logo Header -->
-            <div class="text-center mb-12" style="animation: float 3s ease-in-out infinite;">
-                <div class="glass-strong rounded-3xl p-8 inline-block bg-white shadow-2xl">
-                    <img src="{{ asset('images/logo.png') }}" alt="Maires d'Afrique" class="max-w-xs mx-auto"
-                        onerror="this.style.display='none'">
+
+            <!-- Hero Section -->
+            <div class="text-center mb-16" style="animation: float 4s ease-in-out infinite;">
+                <div class="inline-block relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-3xl blur-2xl opacity-50">
+                    </div>
+                    <div class="relative glass-strong rounded-3xl p-10 shadow-2xl border-2 border-white/20">
+                        <div class="bg-white rounded-lg">
+                            <img src="{{ asset('images/logo.png') }}" alt="Maires d'Afrique" class="h-20 mx-auto"
+                                onerror="this.style.display='none'">
+                        </div>
+
+                        <h1 class="text-5xl md:text-3xl font-black text-white mt-6 glow-text">Maires d'Afrique</h1>
+                    </div>
                 </div>
             </div>
 
             <!-- Website Link -->
-            <div class="text-center mb-12">
+            <div class="text-center mb-16">
                 <a href="http://www.mairesdafrique.com" target="_blank"
-                    class="inline-flex items-center gap-3 text-2xl font-bold text-white px-8 py-4 glass-strong rounded-full hover:scale-105 transition-all shadow-2xl hover:shadow-purple-500/50">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    class="inline-flex items-center gap-3 text-xl font-bold text-white px-6 py-3 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-full hover:scale-105 transition-all shadow-2xl hover:shadow-purple-500/50 border-2 border-white/20 relative overflow-hidden group">
+                    <span class="absolute inset-0 shimmer"></span>
+                    <svg class="w-7 h-7 group-hover:rotate-45 transition-transform" fill="currentColor"
+                        viewBox="0 0 20 20">
                         <path
                             d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
                         <path
                             d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
                     </svg>
-                    www.mairesdafrique.com
+                    <span class="relative z-10">www.mairesdafrique.com</span>
                 </a>
             </div>
 
-            <!-- Main Glass Container -->
-            <div class="">
-                <!-- Introduction -->
-                <div class="space-y-6 text-lg leading-relaxed text-white mb-12">
-                    <div class="glass rounded-2xl p-6 border-l-4 border-purple-400 hover:glass-strong transition-all">
-                        <p><span class="font-bold text-purple-300">Maires d'Afrique</span> est un magazine international
-                            de promotion et de valorisation de la dynamique et des perspectives locales. Il vise à
-                            offrir un cadre de communication adapté aux élus locaux et à renforcer l'écoute des maires.
-                        </p>
-                    </div>
-
-                    <div class="glass rounded-2xl p-6 border-l-4 border-blue-400 hover:glass-strong transition-all">
-                        <p>Entièrement destiné aux décideurs communaux, il propose un traitement pertinent de
-                            l'information politique, économique, financière, juridique, sociale, culturelle et sportive
-                            au plan communal. Une ligne éditoriale responsable, privilégiant l'objectivité et
-                            l'information de proximité.</p>
-                    </div>
-
-                    <div class="glass rounded-2xl p-6 border-l-4 border-indigo-400 hover:glass-strong transition-all">
-                        <p>Il comprend des informations documentées de l'actualité locale, des conseils et des analyses
-                            d'experts, utiles aux élus et aux populations. Il proposera également des dossiers
-                            sectoriels complets, des fiches techniques, des reportages, des enquêtes sur des sujets
-                            locaux.</p>
-                    </div>
+            <!-- Introduction Cards -->
+            <div class="grid md:grid-cols-3 gap-6 mb-16">
+                <div class="gradient-border glass p-8 rounded-3xl card-hover">
+                    <div class="text-4xl mb-4">✨</div>
+                    <h3 class="text-xl font-bold text-purple-300 mb-3">Promotion</h3>
+                    <p class="text-white/90 leading-relaxed"><span class="font-bold text-purple-200">Maires
+                            d'Afrique</span> est un magazine international de promotion et de valorisation de la
+                        dynamique et des perspectives locales.</p>
                 </div>
 
-                <!-- Highlight Quote -->
+                <div class="gradient-border glass p-8 rounded-3xl card-hover" style="animation-delay: 0.1s;">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-bold text-blue-300 mb-3">Communication</h3>
+                    <p class="text-white/90 leading-relaxed">Un cadre de communication adapté aux élus locaux et au
+                        renforcement de l'écoute des maires.</p>
+                </div>
+
+                <div class="gradient-border glass p-8 rounded-3xl card-hover" style="animation-delay: 0.2s;">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold text-pink-300 mb-3">Information</h3>
+                    <p class="text-white/90 leading-relaxed">Une ligne éditoriale responsable, privilégiant
+                        l'objectivité et l'information de proximité.</p>
+                </div>
+            </div>
+
+            <!-- Highlight Quote -->
+            <div class="my-16 relative">
                 <div
-                    class="my-12 p-8 bg-gradient-to-r from-purple-600/30 to-blue-600/30 glass-strong rounded-3xl transform hover:scale-105 transition-all shadow-2xl border border-white/20">
-                    <p class="text-2xl md:text-3xl font-bold text-white text-center italic">
+                    class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-3xl blur-xl opacity-30">
+                </div>
+                <div class="relative glass-strong p-10 md:p-12 rounded-3xl border-2 border-white/20 shadow-2xl">
+                    <div class="text-6xl mb-6 text-center">💬</div>
+                    <p class="text-3xl md:text-4xl font-black text-white text-center leading-relaxed glow-text">
                         "Un journal au cœur de la décision entre les élus locaux et les populations"
                     </p>
                 </div>
+            </div>
 
-                <!-- Focus Section -->
-                <div class="my-12">
-                    <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-8">
-                        🎯 Maires d'Afrique se consacre à :
-                    </h3>
-                    <div class="space-y-4">
+            <!-- Focus Section -->
+            <div class="my-16">
+                <h3 class="text-4xl md:text-5xl font-black text-white mb-10 text-center glow-text">
+                    🎯 Notre Mission
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="gradient-border glass p-8 rounded-3xl card-hover group">
                         <div
-                            class="flex items-start gap-4 glass rounded-2xl p-6 hover:glass-strong hover:translate-x-2 transition-all">
-                            <div
-                                class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
-                                ✓</div>
-                            <p class="text-white text-lg">À la vie des communes et des collectivités territoriales, au
-                                renforcement des capacités et au développement des ressources humaines locales</p>
-                        </div>
-                        <div
-                            class="flex items-start gap-4 glass rounded-2xl p-6 hover:glass-strong hover:translate-x-2 transition-all">
-                            <div
-                                class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
-                                ✓</div>
-                            <p class="text-white text-lg">Aux leviers organisationnels, managériaux et technologiques
-                                locales des communes</p>
-                        </div>
-                        <div
-                            class="flex items-start gap-4 glass rounded-2xl p-6 hover:glass-strong hover:translate-x-2 transition-all">
-                            <div
-                                class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
-                                ✓</div>
-                            <p class="text-white text-lg">À la gouvernance globale des communes d'Afrique</p>
-                        </div>
+                            class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                            🏘️</div>
+                        <p class="text-white text-lg leading-relaxed">Vie des communes et collectivités territoriales,
+                            renforcement des capacités et développement des ressources humaines locales</p>
                     </div>
-                </div>
 
-                <!-- Rubriques Section -->
-                <div class="my-12">
-                    <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-10 text-center">📑 Rubriques
-                        Principales</h3>
-
-                    <div class="grid gap-6">
+                    <div class="gradient-border glass p-8 rounded-3xl card-hover group">
                         <div
-                            class="glass rounded-2xl p-6 md:p-8 border-l-8 border-purple-400 hover:glass-strong hover:-translate-y-1 transition-all">
-                            <h5 class="text-2xl font-bold text-purple-300 mb-3 flex items-center gap-2">
-                                <span class="text-3xl">🏙️</span> Échos des Villes
-                            </h5>
-                            <p class="text-white/90 leading-relaxed">Toute l'actualité économique, politique,
-                                culturelle, environnementale, technologique et sportive des communes.</p>
-                        </div>
-
-                        <div
-                            class="glass rounded-2xl p-6 md:p-8 border-l-8 border-blue-400 hover:glass-strong hover:-translate-y-1 transition-all">
-                            <h5 class="text-2xl font-bold text-blue-300 mb-3 flex items-center gap-2">
-                                <span class="text-3xl">📰</span> Dossiers et Interviews
-                            </h5>
-                            <p class="text-white/90 leading-relaxed">Gros plan sur un sujet d'intérêt pour la mairie ou
-                                la commune et entretien avec un responsable municipal.</p>
-                        </div>
-
-                        <div
-                            class="glass rounded-2xl p-6 md:p-8 border-l-8 border-indigo-400 hover:glass-strong hover:-translate-y-1 transition-all">
-                            <h5 class="text-2xl font-bold text-indigo-300 mb-3 flex items-center gap-2">
-                                <span class="text-3xl">📊</span> Mandat
-                            </h5>
-                            <p class="text-white/90 leading-relaxed">Analyse et décryptage de la gestion communale par
-                                des administrés et des experts.</p>
-                        </div>
-
-                        <div
-                            class="glass rounded-2xl p-6 md:p-8 border-l-8 border-purple-400 hover:glass-strong hover:-translate-y-1 transition-all">
-                            <h5 class="text-2xl font-bold text-purple-300 mb-3 flex items-center gap-2">
-                                <span class="text-3xl">📻</span> Commune à la Une
-                            </h5>
-                            <p class="text-white/90 leading-relaxed">Radioscopie d'une commune.</p>
-                        </div>
-
-                        <div
-                            class="glass rounded-2xl p-6 md:p-8 border-l-8 border-blue-400 hover:glass-strong hover:-translate-y-1 transition-all">
-                            <h5 class="text-2xl font-bold text-blue-300 mb-3 flex items-center gap-2">
-                                <span class="text-3xl">⚖️</span> Aide à la Décision
-                            </h5>
-                            <p class="text-white/90 leading-relaxed">Veille juridique. Économie, fiscalité, finance
-                                locales, partenariats, jumelages.</p>
-                        </div>
-
-                        <div
-                            class="glass rounded-2xl p-6 md:p-8 border-l-8 border-indigo-400 hover:glass-strong hover:-translate-y-1 transition-all">
-                            <h5 class="text-2xl font-bold text-indigo-300 mb-3 flex items-center gap-2">
-                                <span class="text-3xl">📢</span> Annonces
-                            </h5>
-                            <p class="text-white/90 leading-relaxed">Diffusions des appels d'offre, offres de services à
-                                l'intention des maires et communes.</p>
-                        </div>
+                            class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                            ⚙️</div>
+                        <p class="text-white text-lg leading-relaxed">Leviers organisationnels, managériaux et
+                            technologiques des communes</p>
                     </div>
-                </div>
 
-                <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row gap-6 justify-center my-12">
-                    <a href="{{ route('samca.affiche') }}"
-                        class="px-10 py-5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-bold text-xl shadow-2xl hover:shadow-purple-500/50 hover:-translate-y-2 transition-all text-center">
-                        📅 Découvrir SAMCA 2026
-                    </a>
-                    <a href="{{ route('samca.magazine') }}"
-                        class="px-10 py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full font-bold text-xl shadow-2xl hover:shadow-blue-500/50 hover:-translate-y-2 transition-all text-center">
-                        📖 En savoir plus
-                    </a>
-                </div>
-
-                <!-- Footer -->
-                <div class="glass-strong rounded-3xl p-8 md:p-10 text-center shadow-2xl border border-white/20">
-                    <h4 class="text-2xl md:text-3xl font-bold text-white mb-4">🏆 Magazine de promotion et de
-                        valorisation</h4>
-                    <p class="text-xl">
-                        <a href="http://www.mairesdafrique.com" target="_blank"
-                            class="text-purple-300 hover:text-white font-semibold transition-colors">
-                            🌐 www.mairesdafrique.com
-                        </a>
-                    </p>
+                    <div class="gradient-border glass p-8 rounded-3xl card-hover group">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                            🌍</div>
+                        <p class="text-white text-lg leading-relaxed">Gouvernance globale des communes d'Afrique</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- Rubriques Section -->
+            <div class="my-16">
+                <h3 class="text-4xl md:text-5xl font-black text-white mb-12 text-center glow-text">
+                    📑 Nos Rubriques
+                </h3>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="gradient-border glass p-8 rounded-3xl card-hover group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                                🏙️</div>
+                            <h5 class="text-2xl font-bold text-purple-200">Échos des Villes</h5>
+                        </div>
+                        <p class="text-white/90 leading-relaxed">L'actualité économique, politique, culturelle,
+                            environnementale, technologique et sportive des communes.</p>
+                    </div>
+
+                    <div class="gradient-border glass p-8 rounded-3xl card-hover group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                                📰</div>
+                            <h5 class="text-2xl font-bold text-blue-200">Dossiers & Interviews</h5>
+                        </div>
+                        <p class="text-white/90 leading-relaxed">Gros plan sur un sujet d'intérêt pour la mairie et
+                            entretiens avec les responsables municipaux.</p>
+                    </div>
+
+                    <div class="gradient-border glass p-8 rounded-3xl card-hover group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                                📊</div>
+                            <h5 class="text-2xl font-bold text-pink-200">Mandat</h5>
+                        </div>
+                        <p class="text-white/90 leading-relaxed">Analyse et décryptage de la gestion communale par des
+                            administrés et experts.</p>
+                    </div>
+
+                    <div class="gradient-border glass p-8 rounded-3xl card-hover group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                                📻</div>
+                            <h5 class="text-2xl font-bold text-indigo-200">Commune à la Une</h5>
+                        </div>
+                        <p class="text-white/90 leading-relaxed">Radioscopie approfondie d'une commune.</p>
+                    </div>
+
+                    <div class="gradient-border glass p-8 rounded-3xl card-hover group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                                ⚖️</div>
+                            <h5 class="text-2xl font-bold text-purple-200">Aide à la Décision</h5>
+                        </div>
+                        <p class="text-white/90 leading-relaxed">Veille juridique, économie, fiscalité, finance locales,
+                            partenariats et jumelages.</p>
+                    </div>
+
+                    <div class="gradient-border glass p-8 rounded-3xl card-hover group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">
+                                📢</div>
+                            <h5 class="text-2xl font-bold text-pink-200">Annonces</h5>
+                        </div>
+                        <p class="text-white/90 leading-relaxed">Appels d'offres et services à l'intention des maires et
+                            communes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-6 justify-center my-16">
+                <a href="{{ route('samca.affiche') }}"
+                    class="group relative px-12 py-6 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white rounded-full font-black text-xl shadow-2xl hover:shadow-purple-500/50 hover:-translate-y-3 transition-all text-center overflow-hidden">
+                    <span class="absolute inset-0 shimmer"></span>
+                    <span class="relative z-10 flex items-center justify-center gap-3">
+                        <span class="text-2xl">📅</span>
+                        Découvrir SAMCA 2026
+                    </span>
+                </a>
+                <a href="{{ route('samca.magazine') }}"
+                    class="group relative px-12 py-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 text-white rounded-full font-black text-xl shadow-2xl hover:shadow-blue-500/50 hover:-translate-y-3 transition-all text-center overflow-hidden">
+                    <span class="absolute inset-0 shimmer"></span>
+                    <span class="relative z-10 flex items-center justify-center gap-3">
+                        <span class="text-2xl">📖</span>
+                        Lire le Magazine
+                    </span>
+                </a>
+            </div>
+
+            <!-- Footer -->
+            <div class="relative mt-20">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-3xl blur-xl opacity-20">
+                </div>
+                <div
+                    class="relative glass-strong rounded-3xl p-10 md:p-12 text-center shadow-2xl border-2 border-white/20">
+                    <div class="text-6xl mb-4">🏆</div>
+                    <h4 class="text-3xl md:text-4xl font-black text-white mb-6 glow-text">Magazine de Promotion et de
+                        Valorisation</h4>
+                    <p class="text-2xl mb-6">
+                        <a href="http://www.mairesdafrique.com" target="_blank"
+                            class="text-purple-300 hover:text-white font-bold transition-colors inline-flex items-center gap-2">
+                            <span class="text-3xl">🌐</span>
+                            www.mairesdafrique.com
+                        </a>
+                    </p>
+                    <p class="text-white/70 text-lg">Connecter les élus locaux avec leurs communautés</p>
+                </div>
+            </div>
+
         </div>
     </div>
+
 </body>
 
 </html>

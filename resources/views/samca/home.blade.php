@@ -4,12 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maires d'Afrique - Accueil</title>
-    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="icon" href="/maires-afrique-logo.jpeg" sizes="any">
-    <link rel="icon" href="/maires-afrique-logo.jpeg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/maires-afrique-logo.jpeg">
+    <title>Maires d'Afrique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @keyframes float {
 
@@ -47,18 +43,6 @@
             }
         }
 
-        @keyframes pulse-glow {
-
-            0%,
-            100% {
-                box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
-            }
-
-            50% {
-                box-shadow: 0 0 40px rgba(168, 85, 247, 0.8);
-            }
-        }
-
         .animate-gradient {
             background-size: 400% 400%;
             animation: gradient 20s ease infinite;
@@ -83,8 +67,7 @@
         }
 
         .glow-text {
-            text-shadow: 0 0 20px rgba(168, 85, 247, 0.5),
-                0 0 40px rgba(168, 85, 247, 0.3);
+            text-shadow: 0 0 20px rgba(168, 85, 247, 0.5), 0 0 40px rgba(168, 85, 247, 0.3);
         }
 
         .card-hover {
@@ -112,6 +95,28 @@
             -webkit-mask-composite: xor;
             mask-composite: exclude;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link.active {
+            color: #a855f7;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, #a855f7, #3b82f6);
+        }
     </style>
 </head>
 
@@ -127,8 +132,6 @@
             style="animation-delay: 2s;"></div>
         <div class="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse"
             style="animation-delay: 4s;"></div>
-
-        <!-- Particles -->
         <div class="absolute top-20 left-20 w-2 h-2 bg-white rounded-full animate-pulse"></div>
         <div class="absolute top-40 right-40 w-1 h-1 bg-purple-300 rounded-full animate-pulse"
             style="animation-delay: 1s;"></div>
@@ -140,21 +143,26 @@
     <nav class="sticky top-0 z-50 glass-strong shadow-2xl border-b border-white/10">
         <div class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between flex-wrap gap-4">
-                <a href="{{ route('home') }}"
+                <a href="#accueil"
                     class="flex items-center gap-3 px-2 bg-white rounded-lg font-bold text-2xl hover:scale-110 transition-all duration-300">
-                    <img src="{{ asset('images/logo.png') }}" alt="Maires d'Afrique" class="h-14 mx-auto"
-                        onerror="this.style.display='none'">
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo SAMCA" class="w-auto h-12" />
                 </a>
-                <div class="flex gap-3">
-                    <a href="{{ route('samca.affiche') }}"
-                        class="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-2xl font-semibold transition-all hover:shadow-lg hover:shadow-purple-500/50 hover:-translate-y-1 flex items-center gap-2">
-                        <span class="text-xl">🌍</span>
-                        <span class="hidden md:inline">SAMCA</span>
+                <div class="flex gap-8 flex-wrap">
+                    <a href="#apropos"
+                        class="nav-link text-white hover:text-purple-300 font-semibold transition-colors">
+                        À propos
                     </a>
-                    <a href="{{ route('samca.magazine') }}"
-                        class="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl font-semibold transition-all hover:shadow-lg hover:shadow-blue-500/50 hover:-translate-y-1 flex items-center gap-2">
-                        <span class="text-xl">📰</span>
-                        <span class="hidden md:inline">Magazine</span>
+                    <a href="#magazine"
+                        class="nav-link text-white hover:text-purple-300 font-semibold transition-colors">
+                        Magazine
+                    </a>
+                    <a href="#evenements"
+                        class="nav-link text-white hover:text-purple-300 font-semibold transition-colors">
+                        Événements
+                    </a>
+                    <a href="#contact"
+                        class="nav-link text-white hover:text-purple-300 font-semibold transition-colors">
+                        Contact
                     </a>
                 </div>
             </div>
@@ -166,78 +174,66 @@
         <div class="max-w-7xl mx-auto">
 
             <!-- Hero Section -->
-            <div class="text-center mb-16" style="animation: float 4s ease-in-out infinite;">
+            <section id="accueil" class="text-center mb-24" style="animation: float 4s ease-in-out infinite;">
                 <div class="inline-block relative">
                     <div
                         class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-3xl blur-2xl opacity-50">
                     </div>
                     <div class="relative glass-strong rounded-3xl p-10 shadow-2xl border-2 border-white/20">
-                        <div class="bg-white rounded-lg">
-                            <img src="{{ asset('images/logo.png') }}" alt="Maires d'Afrique" class="h-20 mx-auto"
-                                onerror="this.style.display='none'">
-                        </div>
-
-                        <h1 class="text-5xl md:text-3xl font-black text-white mt-6 glow-text">Maires d'Afrique</h1>
+                        <img src="{{ asset('images/logo.png') }}" alt="Logo SAMCA"
+                            class="w-full h-60 rounded-xl bg-white" />
+                        <h1 class="text-5xl md:text-7xl font-black text-white glow-text">Maires d'Afrique</h1>
+                        <p class="text-2xl text-purple-200 mt-4 font-semibold">Magazine International de Promotion</p>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- Website Link -->
-            <div class="text-center mb-16">
-                <a href="http://www.mairesdafrique.com" target="_blank"
-                    class="inline-flex items-center gap-3 text-xl font-bold text-white px-6 py-3 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-full hover:scale-105 transition-all shadow-2xl hover:shadow-purple-500/50 border-2 border-white/20 relative overflow-hidden group">
-                    <span class="absolute inset-0 shimmer"></span>
-                    <svg class="w-7 h-7 group-hover:rotate-45 transition-transform" fill="currentColor"
-                        viewBox="0 0 20 20">
-                        <path
-                            d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                        <path
-                            d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-                    </svg>
-                    <span class="relative z-10">www.mairesdafrique.com</span>
-                </a>
-            </div>
+            <!-- À propos Section -->
+            <section id="apropos" class="mb-24">
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-12 text-center glow-text">
+                    ✨ À propos
+                </h2>
 
-            <!-- Introduction Cards -->
-            <div class="grid md:grid-cols-3 gap-6 mb-16">
-                <div class="gradient-border glass p-8 rounded-3xl card-hover">
-                    <div class="text-4xl mb-4">✨</div>
-                    <h3 class="text-xl font-bold text-purple-300 mb-3">Promotion</h3>
-                    <p class="text-white/90 leading-relaxed"><span class="font-bold text-purple-200">Maires
-                            d'Afrique</span> est un magazine international de promotion et de valorisation de la
-                        dynamique et des perspectives locales.</p>
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="gradient-border glass p-8 rounded-3xl card-hover">
+                        <div class="text-4xl mb-4">✨</div>
+                        <h3 class="text-xl font-bold text-purple-300 mb-3">Promotion</h3>
+                        <p class="text-white/90 leading-relaxed"><span class="font-bold text-purple-200">Maires
+                                d'Afrique</span> est un magazine international de promotion et de valorisation de la
+                            dynamique et des perspectives locales.</p>
+                    </div>
+
+                    <div class="gradient-border glass p-8 rounded-3xl card-hover">
+                        <div class="text-4xl mb-4">🎯</div>
+                        <h3 class="text-xl font-bold text-blue-300 mb-3">Communication</h3>
+                        <p class="text-white/90 leading-relaxed">Un cadre de communication adapté aux élus locaux et au
+                            renforcement de l'écoute des maires.</p>
+                    </div>
+
+                    <div class="gradient-border glass p-8 rounded-3xl card-hover">
+                        <div class="text-4xl mb-4">📊</div>
+                        <h3 class="text-xl font-bold text-pink-300 mb-3">Information</h3>
+                        <p class="text-white/90 leading-relaxed">Une ligne éditoriale responsable, privilégiant
+                            l'objectivité et l'information de proximité.</p>
+                    </div>
                 </div>
 
-                <div class="gradient-border glass p-8 rounded-3xl card-hover" style="animation-delay: 0.1s;">
-                    <div class="text-4xl mb-4">🎯</div>
-                    <h3 class="text-xl font-bold text-blue-300 mb-3">Communication</h3>
-                    <p class="text-white/90 leading-relaxed">Un cadre de communication adapté aux élus locaux et au
-                        renforcement de l'écoute des maires.</p>
+                <!-- Highlight Quote -->
+                <div class="relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-3xl blur-xl opacity-30">
+                    </div>
+                    <div class="relative glass-strong p-10 md:p-12 rounded-3xl border-2 border-white/20 shadow-2xl">
+                        <div class="text-6xl mb-6 text-center">💬</div>
+                        <p class="text-3xl md:text-4xl font-black text-white text-center leading-relaxed glow-text">
+                            "Un journal au cœur de la décision entre les élus locaux et les populations"
+                        </p>
+                    </div>
                 </div>
+            </section>
 
-                <div class="gradient-border glass p-8 rounded-3xl card-hover" style="animation-delay: 0.2s;">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h3 class="text-xl font-bold text-pink-300 mb-3">Information</h3>
-                    <p class="text-white/90 leading-relaxed">Une ligne éditoriale responsable, privilégiant
-                        l'objectivité et l'information de proximité.</p>
-                </div>
-            </div>
-
-            <!-- Highlight Quote -->
-            <div class="my-16 relative">
-                <div
-                    class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-3xl blur-xl opacity-30">
-                </div>
-                <div class="relative glass-strong p-10 md:p-12 rounded-3xl border-2 border-white/20 shadow-2xl">
-                    <div class="text-6xl mb-6 text-center">💬</div>
-                    <p class="text-3xl md:text-4xl font-black text-white text-center leading-relaxed glow-text">
-                        "Un journal au cœur de la décision entre les élus locaux et les populations"
-                    </p>
-                </div>
-            </div>
-
-            <!-- Focus Section -->
-            <div class="my-16">
+            <!-- Mission Section -->
+            <section class="mb-24">
                 <h3 class="text-4xl md:text-5xl font-black text-white mb-10 text-center glow-text">
                     🎯 Notre Mission
                 </h3>
@@ -265,13 +261,13 @@
                         <p class="text-white text-lg leading-relaxed">Gouvernance globale des communes d'Afrique</p>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- Rubriques Section -->
-            <div class="my-16">
-                <h3 class="text-4xl md:text-5xl font-black text-white mb-12 text-center glow-text">
+            <!-- Magazine Section -->
+            <section id="magazine" class="mb-24">
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-12 text-center glow-text">
                     📑 Nos Rubriques
-                </h3>
+                </h2>
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="gradient-border glass p-8 rounded-3xl card-hover group">
@@ -339,46 +335,164 @@
                             communes.</p>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-6 justify-center my-16">
-                <a href="{{ route('samca.affiche') }}"
-                    class="group relative px-12 py-6 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white rounded-full font-black text-xl shadow-2xl hover:shadow-purple-500/50 hover:-translate-y-3 transition-all text-center overflow-hidden">
-                    <span class="absolute inset-0 shimmer"></span>
-                    <span class="relative z-10 flex items-center justify-center gap-3">
-                        <span class="text-2xl">📅</span>
-                        Découvrir SAMCA 2026
-                    </span>
-                </a>
-                <a href="{{ route('samca.magazine') }}"
-                    class="group relative px-12 py-6 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 text-white rounded-full font-black text-xl shadow-2xl hover:shadow-blue-500/50 hover:-translate-y-3 transition-all text-center overflow-hidden">
-                    <span class="absolute inset-0 shimmer"></span>
-                    <span class="relative z-10 flex items-center justify-center gap-3">
-                        <span class="text-2xl">📖</span>
-                        Lire le Magazine
-                    </span>
-                </a>
-            </div>
+            <!-- Événements Section -->
+            <section id="evenements" class="mb-24">
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-12 text-center glow-text">
+                    🎯 Nos Événements
+                </h2>
+
+                <!-- SAMCA 2026 - Event Card -->
+                <div class="relative mb-8">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 rounded-3xl blur-2xl opacity-40">
+                    </div>
+                    <div class="relative gradient-border glass-strong rounded-3xl p-10 md:p-12 shadow-2xl">
+
+                        <!-- Event Header -->
+                        <div class="flex flex-col items-center justify-center mb-10">
+                            <img src="{{ asset('images/logo.jpeg') }}" alt="Logo SAMCA"
+                                class="w-auto h-24 rounded-xl" />
+                            <h3 class="text-4xl md:text-6xl font-black text-white glow-text mb-4">SAMCA 2026</h3>
+                            <p class="text-2xl text-purple-200 font-bold">Salon des Maires et des Collectivités
+                                d'Afrique</p>
+                        </div>
+
+                        <!-- Date & Location -->
+                        <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <div class="glass rounded-2xl p-6 border border-white/10 card-hover">
+                                <div class="text-4xl mb-3">🗓️</div>
+                                <p class="text-lg text-purple-200 mb-2 font-semibold">Dates</p>
+                                <p class="text-2xl md:text-3xl font-black text-white">21, 22, 23 Mai 2026</p>
+                            </div>
+                            <div class="glass rounded-2xl p-6 border border-white/10 card-hover">
+                                <div class="text-4xl mb-3">📍</div>
+                                <p class="text-lg text-blue-200 mb-2 font-semibold">Lieu</p>
+                                <p class="text-2xl md:text-3xl font-black text-white">Hôtel 2 Février</p>
+                                <p class="text-lg text-white/80">Lomé - Togo 🇹🇬</p>
+                            </div>
+                        </div>
+
+                        <!-- Theme -->
+                        <div class="glass rounded-2xl p-8 border border-white/10 mb-8">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center text-3xl">
+                                    🎯</div>
+                                <h4 class="text-2xl font-bold text-pink-200">Thème Principal</h4>
+                            </div>
+                            <p class="text-xl md:text-2xl font-bold text-white italic">"Les opportunités de la promotion
+                                immobilière et foncière pour les municipalités"</p>
+                        </div>
+
+                        <!-- Event Format -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                            <div class="glass rounded-2xl p-6 text-center card-hover group">
+                                <div class="text-5xl mb-2 group-hover:scale-125 transition-transform">🏪</div>
+                                <h5 class="text-lg font-bold text-white">EXPOSITION</h5>
+                            </div>
+                            <div class="glass rounded-2xl p-6 text-center card-hover group">
+                                <div class="text-5xl mb-2 group-hover:scale-125 transition-transform">👥</div>
+                                <h5 class="text-lg font-bold text-white">CONFÉRENCE</h5>
+                            </div>
+                            <div class="glass rounded-2xl p-6 text-center card-hover group">
+                                <div class="text-5xl mb-2 group-hover:scale-125 transition-transform">🤝</div>
+                                <h5 class="text-lg font-bold text-white">B TO B</h5>
+                            </div>
+                            <div class="glass rounded-2xl p-6 text-center card-hover group">
+                                <div class="text-5xl mb-2 group-hover:scale-125 transition-transform">🏅</div>
+                                <h5 class="text-lg font-bold text-white">AWARDS</h5>
+                            </div>
+                        </div>
+
+                        <!-- Themes -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="glass rounded-2xl p-6 text-center card-hover">
+                                <div class="text-4xl mb-2">🏗️</div>
+                                <h5 class="text-lg font-bold text-purple-200 mb-1">Aménagement</h5>
+                                <p class="text-sm text-white/80">Urbain & Environnement</p>
+                            </div>
+                            <div class="glass rounded-2xl p-6 text-center card-hover">
+                                <div class="text-4xl mb-2">⚡</div>
+                                <h5 class="text-lg font-bold text-blue-200 mb-1">Énergie</h5>
+                                <p class="text-sm text-white/80">Solutions Durables</p>
+                            </div>
+                            <div class="glass rounded-2xl p-6 text-center card-hover">
+                                <div class="text-4xl mb-2">💼</div>
+                                <h5 class="text-lg font-bold text-indigo-200 mb-1">Finances</h5>
+                                <p class="text-sm text-white/80">Services & Équipements</p>
+                            </div>
+                            <div class="glass rounded-2xl p-6 text-center card-hover">
+                                <div class="text-4xl mb-2">🤖</div>
+                                <h5 class="text-lg font-bold text-pink-200 mb-1">Intelligence</h5>
+                                <p class="text-sm text-white/80">Artificielle & Tech</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder pour futurs événements -->
+                <div class="glass rounded-3xl p-10 text-center border-2 border-dashed border-white/20">
+                    <div class="text-6xl mb-4">📅</div>
+                    <p class="text-2xl text-white/70 font-semibold">D'autres événements à venir...</p>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="mb-16">
+                <div class="relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-3xl blur-xl opacity-20">
+                    </div>
+                    <div class="relative glass-strong rounded-3xl p-10 md:p-12 shadow-2xl border-2 border-white/20">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center text-4xl shadow-lg">
+                                📞</div>
+                            <h2 class="text-3xl md:text-4xl font-black text-white glow-text">Contactez-nous</h2>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+
+                            <div class="glass rounded-2xl p-8 border border-white/10 card-hover group">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="text-5xl group-hover:scale-125 transition-transform">📱</span>
+                                    <p class="text-xl font-bold text-blue-200">Téléphone</p>
+                                </div>
+                                <a href="tel:+22898905151"
+                                    class="text-2xl font-bold text-white hover:text-blue-300 transition-colors">
+                                    +228 98905151
+                                </a>
+                            </div>
+
+                            <div class="glass rounded-2xl p-8 border border-white/10 card-hover group">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="text-5xl group-hover:scale-125 transition-transform">📧</span>
+                                    <p class="text-xl font-bold text-pink-200">Email</p>
+                                </div>
+                                <a href="mailto:maires.dafrique@gmail.com"
+                                    class="text-xl font-bold text-white hover:text-pink-300 transition-colors break-all">
+                                    maires.dafrique@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Footer -->
-            <div class="relative mt-20">
+            <div class="relative">
                 <div
                     class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-3xl blur-xl opacity-20">
                 </div>
                 <div
                     class="relative glass-strong rounded-3xl p-10 md:p-12 text-center shadow-2xl border-2 border-white/20">
                     <div class="text-6xl mb-4">🏆</div>
-                    <h4 class="text-3xl md:text-4xl font-black text-white mb-6 glow-text">Magazine de Promotion et de
+                    <h4 class="text-3xl md:text-4xl font-black text-white mb-4 glow-text">Magazine de Promotion et de
                         Valorisation</h4>
-                    <p class="text-2xl mb-6">
-                        <a href="http://www.mairesdafrique.com" target="_blank"
-                            class="text-purple-300 hover:text-white font-bold transition-colors inline-flex items-center gap-2">
-                            <span class="text-3xl">🌐</span>
-                            www.mairesdafrique.com
-                        </a>
-                    </p>
                     <p class="text-white/70 text-lg">Connecter les élus locaux avec leurs communautés</p>
+                    <p class="text-white/50 text-sm mt-6">© 2026 Maires d'Afrique - Tous droits réservés</p>
                 </div>
             </div>
 

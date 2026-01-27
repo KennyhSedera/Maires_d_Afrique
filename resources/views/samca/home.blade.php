@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maires d'Afrique</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="icon" href="/maires-afrique-logo.jpeg" sizes="any">
-    <link rel="icon" href="/maires-afrique-logo.jpeg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/maires-afrique-logo.jpeg">
+    <link rel="icon" href="/maires-afrique-logo.png" sizes="any">
+    <link rel="icon" href="/maires-afrique-logo.png" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/maires-afrique-logo.png">
     <style>
         @keyframes float {
 
@@ -135,15 +135,15 @@
                 </a>
                 <div class="flex gap-8 flex-wrap">
                     <a href="#magazine"
-                        class="nav-link text-black hover:text-purple-800 font-semibold transition-colors">
+                        class="nav-link text-blue-800 hover:text-purple-800 font-semibold transition-colors">
                         Magazine
                     </a>
                     <a href="#evenements"
-                        class="nav-link text-black hover:text-purple-800 font-semibold transition-colors">
+                        class="nav-link text-blue-800 hover:text-purple-800 font-semibold transition-colors">
                         Événements
                     </a>
                     <a href="#contact"
-                        class="nav-link text-black hover:text-purple-800 font-semibold transition-colors">
+                        class="nav-link text-blue-800 hover:text-purple-800 font-semibold transition-colors">
                         Contact
                     </a>
                 </div>
@@ -154,9 +154,7 @@
     <!-- Hero Section -->
     <section id="accueil" class="relative min-h-[80vh] flex items-center overflow-hidden ">
 
-        <!-- Arrière-plan décoratif -->
         <div class="absolute inset-0 -z-10">
-            <!-- Formes géométriques -->
             <div class="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse">
             </div>
             <div
@@ -166,7 +164,6 @@
                 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pink-500/5 rounded-full blur-3xl">
             </div>
 
-            <!-- Grille de points -->
             <div class="absolute inset-0 opacity-30"
                 style="background-image: radial-gradient(circle, #9333ea 1px, transparent 1px); background-size: 50px 50px;">
             </div>
@@ -175,10 +172,7 @@
         <div class="mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center px-8 py-10">
 
-                <!-- Colonne contenu -->
                 <div class="space-y-8">
-
-                    <!-- Titre principal -->
                     <div class="space-y-1">
                         <h1 class="text-2xl md:text-4xl font-black flex gap-2 text-gray-900 leading-tight">
                             Maires
@@ -189,14 +183,13 @@
                         </h1>
                         <div class="h-2 w-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
                     </div>
-                    <!-- Description principale -->
+
                     <p class="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-xl">
                         Un magazine international de <span class="font-bold text-purple-600">promotion</span> et
                         de <span class="font-bold text-pink-600">valorisation</span> de la dynamique et des
                         perspectives locales.
                     </p>
 
-                    <!-- Points clés avec icônes -->
                     <div class="space-y-4 pt-4">
                         <div class="flex items-start gap-4 group">
                             <div
@@ -232,9 +225,8 @@
                         </div>
                     </div>
 
-                    <!-- CTA Buttons -->
                     <div class="flex flex-wrap gap-4 pt-6">
-                        <a href="#"
+                        <a href="#magazine"
                             class="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all">
                             <span>Découvrir le magazine</span>
                             <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
@@ -250,11 +242,8 @@
                     </div>
                 </div>
 
-                <!-- Colonne logo/visuel -->
                 <div class="relative flex items-center justify-center lg:justify-end">
-                    <!-- Cercle décoratif principal -->
                     <div class="relative">
-                        <!-- Anneaux concentriques animés -->
                         <div class="absolute inset-0 -m-8 border-2 border-purple-500/20 rounded-full animate-ping">
                         </div>
                         <div class="absolute inset-0 -m-16 border-2 border-pink-500/20 rounded-full animate-ping"
@@ -262,22 +251,18 @@
                         <div class="absolute inset-0 -m-24 border-2 border-blue-500/20 rounded-full animate-ping"
                             style="animation-delay: 1s;"></div>
 
-                        <!-- Container principal -->
                         <div
                             class="relative w-80 h-80 md:w-96 md:h-96 bg-gradient-to-br from-white to-gray-50 rounded-full shadow-2xl flex items-center justify-center border-4 border-white">
-                            <!-- Effet de glow -->
                             <div
                                 class="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-blue-500/20 rounded-full blur-2xl">
                             </div>
 
-                            <!-- Logo -->
                             <div class="relative z-10 text-center p-8">
                                 <div class="mb-6">
                                     <img src="{{ asset('images/logo.png') }}" alt="Logo Maires d'Afrique"
                                         class="w-auto h-48 object-contain mx-auto drop-shadow-2xl hover:scale-110 transition-transform duration-500" />
                                 </div>
 
-                                <!-- Stats ou badges -->
                                 <div class="flex justify-center gap-3">
                                     <div class="px-4 py-2 bg-white rounded-full shadow-lg border border-purple-100">
                                         <span class="font-bold text-purple-600">🌍 Afrique</span>
@@ -289,7 +274,6 @@
                             </div>
                         </div>
 
-                        <!-- Éléments flottants -->
                         <div class="absolute top-10 -left-6 w-20 h-20 bg-purple-500 rounded-2xl shadow-xl animate-bounce"
                             style="animation-duration: 3s;">
                             <div class="w-full h-full flex items-center justify-center text-3xl">🏛️</div>
@@ -298,7 +282,7 @@
                             style="animation-duration: 3s; animation-delay: 0.5s;">
                             <div class="w-full h-full flex items-center justify-center text-3xl">📢</div>
                         </div>
-                        <div class="absolute bottom-4 left-4 w-16 h-16 bg-blue-500 rounded-2xl shadow-xl animate-bounce"
+                        <div class="absolute bottom-1 left-4 w-16 h-16 bg-blue-500 rounded-2xl shadow-xl animate-bounce"
                             style="animation-duration: 3s; animation-delay: 1s;">
                             <div class="w-full h-full flex items-center justify-center text-2xl">⚖️</div>
                         </div>
@@ -312,99 +296,225 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-12 md:py-20 relative z-10">
         <div class="max-w-7xl mx-auto">
+            <!-- About Section -->
+            <section id="apropos" class="mb-24">
+                <div class="text-center mb-2">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full mb-6">
+                        <span class="w-4 h-4 bg-blue-500 rounded-full animate-pulse"></span>
+                        <span class="text-lg font-semibold text-blue-600">À Propos</span>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8 items-start">
+
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500">
+                        </div>
+
+                        <div
+                            class="relative h-full bg-white overflow-hidden rounded-3xl p-8 md:p-10 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300">
+                            <div class="flex items-start gap-6 mb-6">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Pour les Décideurs</h3>
+                                    <div class="h-1 w-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="text-gray-700 text-lg leading-relaxed">
+                                Entièrement destiné aux <span class="font-semibold text-blue-600">décideurs
+                                    communaux</span>, il
+                                propose un traitement pertinent de l'information <span
+                                    class="font-semibold text-indigo-600">politique, économique, financière, juridique,
+                                    sociale,
+                                    culturelle et sportive</span> au plan communal. Une ligne éditoriale responsable,
+                                privilégiant
+                                l'objectivité et l'information de proximité.
+                            </p>
+
+                            <div class="flex flex-wrap gap-2 mt-6">
+                                <span
+                                    class="px-3 py-1 bg-blue-50 text-blue-600 text-sm font-medium rounded-lg">Politique</span>
+                                <span
+                                    class="px-3 py-1 bg-indigo-50 text-indigo-600 text-sm font-medium rounded-lg">Économie</span>
+                                <span
+                                    class="px-3 py-1 bg-purple-50 text-purple-600 text-sm font-medium rounded-lg">Culture</span>
+                            </div>
+
+                            <div
+                                class="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-b-3xl transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500">
+                        </div>
+
+                        <div
+                            class="relative h-full bg-white rounded-3xl p-8 md:p-10 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                            <!-- Icône décorative -->
+                            <div class="flex items-start gap-6 mb-6">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Notre Contenu</h3>
+                                    <div class="h-1 w-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contenu -->
+                            <p class="text-gray-700 text-lg leading-relaxed">
+                                Il comprendra des <span class="font-semibold text-purple-600">informations
+                                    documentées</span> de
+                                l'actualité locale, des conseils et des analyses d'experts, utiles aux élus et aux
+                                populations. Il
+                                proposera également des <span class="font-semibold text-pink-600">dossiers sectoriels
+                                    complets</span>, des fiches techniques, des reportages, des enquêtes sur des sujets
+                                locaux.
+                            </p>
+
+                            <!-- Liste à puces -->
+                            <ul class="space-y-3 mt-6">
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" fill="currentColor"
+                                        viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Informations documentées</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" fill="currentColor"
+                                        viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Analyses d'experts</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" fill="currentColor"
+                                        viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Dossiers sectoriels & reportages</span>
+                                </li>
+                            </ul>
+
+                            <!-- Barre au fond -->
+                            <div
+                                class="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-b-3xl transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
 
             <!-- Mission Section -->
             <section class="mb-24">
-                <h3 class="text-4xl md:text-5xl font-black text-black mb-10 text-center ">
-                    🎯 Notre Mission
-                </h3>
+                <div class="text-center mb-8">
+                    <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+                        Notre <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Mission</span>
+                    </h2>
+                    <div class="h-1.5 w-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto"></div>
+
+                </div>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Card 1 -->
                     <div class="relative group">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500">
                         </div>
                         <div
                             class="relative h-full bg-white rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                            <!-- Icône avec cercle animé -->
                             <div class="relative mb-6">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl blur-lg group-hover:blur-xl transition-all">
-                                </div>
                                 <div
                                     class="relative w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center text-4xl shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                                     🏘️
                                 </div>
                             </div>
 
-                            <!-- Contenu -->
                             <p class="text-gray-700 text-lg leading-relaxed">
                                 Vie des communes et collectivités territoriales, renforcement des capacités et
                                 développement des
                                 ressources humaines locales
                             </p>
 
-                            <!-- Barre décorative -->
                             <div
                                 class="absolute mx-4 bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
                     <div class="relative group">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500">
                         </div>
                         <div
                             class="relative h-full bg-white rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                            <!-- Icône avec cercle animé -->
                             <div class="relative mb-6">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 rounded-2xl blur-lg group-hover:blur-xl transition-all">
-                                </div>
                                 <div
                                     class="relative w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center text-4xl shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                                     ⚙️
                                 </div>
                             </div>
 
-                            <!-- Contenu -->
                             <p class="text-gray-700 text-lg leading-relaxed">
                                 Leviers organisationnels, managériaux et technologiques des communes
                             </p>
 
-                            <!-- Barre décorative -->
                             <div
                                 class="absolute mx-4 bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-3xl transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 3 -->
                     <div class="relative group">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-pink-500 to-purple-500 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500">
                         </div>
                         <div
                             class="relative h-full bg-white rounded-3xl p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                            <!-- Icône avec cercle animé -->
                             <div class="relative mb-6">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-2xl blur-lg group-hover:blur-xl transition-all">
-                                </div>
                                 <div
                                     class="relative w-20 h-20 bg-gradient-to-br from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center text-4xl shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                                     🌍
                                 </div>
                             </div>
 
-                            <!-- Contenu -->
                             <p class="text-gray-700 text-lg leading-relaxed">
                                 Gouvernance globale des communes d'Afrique
                             </p>
 
-                            <!-- Barre décorative -->
                             <div
                                 class="absolute mx-4 bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-3xl transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500">
                             </div>
@@ -420,7 +530,6 @@
                 </h2>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Échos des Villes -->
                     <div
                         class="relative overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 group">
                         <div
@@ -446,13 +555,11 @@
                             </p>
                         </div>
 
-                        <!-- Barre au fond -->
                         <div
                             class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300">
                         </div>
                     </div>
 
-                    <!-- Dossiers & Interviews -->
                     <div
                         class="relative overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 group">
                         <div
@@ -478,13 +585,11 @@
                             </p>
                         </div>
 
-                        <!-- Barre au fond -->
                         <div
                             class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300">
                         </div>
                     </div>
 
-                    <!-- Mandat -->
                     <div
                         class="relative overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 group">
                         <div
@@ -509,13 +614,11 @@
                             </p>
                         </div>
 
-                        <!-- Barre au fond -->
                         <div
                             class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300">
                         </div>
                     </div>
 
-                    <!-- Commune à la Une -->
                     <div
                         class="relative overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 group">
                         <div
@@ -540,13 +643,11 @@
                             </p>
                         </div>
 
-                        <!-- Barre au fond -->
                         <div
                             class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300">
                         </div>
                     </div>
 
-                    <!-- Aide à la Décision -->
                     <div
                         class="relative overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 group">
                         <div
@@ -571,13 +672,11 @@
                             </p>
                         </div>
 
-                        <!-- Barre au fond -->
                         <div
                             class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300">
                         </div>
                     </div>
 
-                    <!-- Annonces -->
                     <div
                         class="relative overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 group">
                         <div
@@ -602,7 +701,6 @@
                             </p>
                         </div>
 
-                        <!-- Barre au fond -->
                         <div
                             class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300">
                         </div>
@@ -616,23 +714,20 @@
                     🎯 Nos Événements
                 </h2>
 
-                <!-- SAMCA 2026 - Event Card -->
                 <div class="relative mb-8">
                     <div
-                        class="relative bg-gradient-to-r from-purple-200 via-pink-200 to-blue-200 rounded-3xl p-10 md:p-12 shadow-lg">
+                        class="relative bg-gradient-to-r from-purple-200 via-pink-200 to-blue-200 rounded-3xl py-10 md:p-12 shadow-lg">
 
-                        <!-- Event Header -->
                         <div class="flex flex-col items-center justify-center mb-10">
                             <img src="{{ asset('images/logo.jpeg') }}" alt="Logo SAMCA"
                                 class="w-auto h-24 rounded-xl" />
                             <h3 class="text-4xl md:text-6xl font-black text-black  mb-4">SAMCA 2026</h3>
-                            <p class="text-2xl text-purple-400 font-bold">Salon des Maires et des Collectivités
+                            <p class="text-2xl text-purple-400 font-bold text-center">Salon des Maires et des
+                                Collectivités
                                 d'Afrique</p>
                         </div>
 
-                        <!-- Event Content -->
                         <div class="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto p-4">
-                            <!-- Carte principale de l'événement -->
                             <a href="http://localhost:8000/#evenements" target="_blank" referrer="noopener noreferrer"
                                 class="relative overflow-hidden rounded-2xl shadow-xl bg-gradient-to-br from-blue-50 to-white border border-blue-100 transition-all duration-300 transform hover:scale-105">
                                 <div class="absolute top-0 right-0 w-40 h-40 bg-blue-500/10 rounded-full -mr-20 -mt-20">
@@ -642,20 +737,17 @@
                                 </div>
 
                                 <div class="relative p-8">
-                                    <!-- Badge -->
                                     <div
                                         class="inline-block px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-full mb-6">
                                         Événement le plus proche
                                     </div>
 
-                                    <!-- Titre -->
                                     <h3
-                                        class="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-6 leading-tight">
+                                        class="text-xl md:text-3xl font-semibold text-gray-900 text-center mb-6 leading-tight">
                                         "Les opportunités de la promotion immobilière et foncière pour les
                                         municipalités"
                                     </h3>
 
-                                    <!-- Informations -->
                                     <div class="space-y-4 mb-6">
                                         <div class="flex items-center gap-3">
                                             <div
@@ -681,7 +773,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- Tags -->
                                     <div class="flex flex-wrap gap-2 mb-6">
                                         <span
                                             class="px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-lg">Exposition</span>
@@ -694,14 +785,12 @@
                                             class="px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-lg">Awards</span>
                                     </div>
 
-                                    <!-- Description -->
                                     <p class="text-gray-600 text-base italic border-l-4 border-blue-500 pl-4">
                                         Le grand rendez-vous de la dynamique et des perspectives locales
                                     </p>
                                 </div>
                             </a>
 
-                            <!-- Carte CTA -->
                             <a href="http://localhost:8000/#evenements" target="_blank" referrer="noopener noreferrer"
                                 class="group relative overflow-hidden rounded-2xl shadow-xl bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105">
 
@@ -757,13 +846,11 @@
                         </div>
 
                         <div class="grid md:grid-cols-2 gap-6">
-                            <!-- Téléphone -->
                             <a href="tel:+22898905151" class="group block">
                                 <div
                                     class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-500 to-blue-700 p-0.5 hover:scale-[1.02] transition-all duration-300">
                                     <div class="bg-white rounded-[1.375rem] p-8 h-full">
                                         <div class="flex flex-col h-full">
-                                            <!-- Header avec badge -->
                                             <div class="flex items-center justify-between mb-6">
                                                 <span
                                                     class="px-4 py-2 bg-blue-50 text-blue-600 text-xs font-bold rounded-full uppercase tracking-wider">
@@ -775,7 +862,6 @@
                                                 </div>
                                             </div>
 
-                                            <!-- Titre -->
                                             <div class="mb-4">
                                                 <h5 class="text-xl font-black text-gray-900 mb-2">Téléphone</h5>
                                                 <div
@@ -783,7 +869,6 @@
                                                 </div>
                                             </div>
 
-                                            <!-- Numéro -->
                                             <div class="flex-1 flex items-center">
                                                 <div
                                                     class="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 group-hover:scale-105 transition-transform">
@@ -791,7 +876,6 @@
                                                 </div>
                                             </div>
 
-                                            <!-- Footer -->
                                             <div
                                                 class="flex items-center justify-between mt-6 pt-6 border-t border-gray-100">
                                                 <span class="text-sm text-gray-500 font-medium">Appelez
@@ -810,13 +894,11 @@
                                 </div>
                             </a>
 
-                            <!-- Email -->
                             <a href="mailto:maires.dafrique@gmail.com" class="group block">
                                 <div
                                     class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-pink-500 to-purple-600 p-0.5 hover:scale-[1.02] transition-all duration-300">
                                     <div class="bg-white rounded-[1.375rem] p-8 h-full">
                                         <div class="flex flex-col h-full">
-                                            <!-- Header avec badge -->
                                             <div class="flex items-center justify-between mb-6">
                                                 <span
                                                     class="px-4 py-2 bg-pink-50 text-pink-600 text-xs font-bold rounded-full uppercase tracking-wider">
@@ -828,7 +910,6 @@
                                                 </div>
                                             </div>
 
-                                            <!-- Titre -->
                                             <div class="mb-4">
                                                 <h5 class="text-xl font-black text-gray-900 mb-2">Email</h5>
                                                 <div
@@ -836,7 +917,6 @@
                                                 </div>
                                             </div>
 
-                                            <!-- Email -->
                                             <div class="flex-1 flex items-center">
                                                 <div
                                                     class="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-500 break-all group-hover:scale-105 transition-transform">
@@ -844,7 +924,6 @@
                                                 </div>
                                             </div>
 
-                                            <!-- Footer -->
                                             <div
                                                 class="flex items-center justify-between mt-6 pt-6 border-t border-gray-100">
                                                 <span class="text-sm text-gray-500 font-medium">Envoyez un
@@ -870,15 +949,127 @@
     </div>
 
     <!-- Footer -->
-    <div class="relative">
-        <div class="relative p-10 md:p-12 text-center bg-blue-500">
-            <div class="text-6xl mb-4">🏆</div>
-            <h4 class="text-3xl md:text-4xl font-black text-white mb-4 ">Magazine de Promotion et de
-                Valorisation</h4>
-            <p class="text-white/70 text-lg">Connecter les élus locaux avec leurs communautés</p>
-            <p class="text-white/50 text-sm mt-6">© 2026 Maires d'Afrique - Tous droits réservés</p>
+    <footer class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700"></div>
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 40px 40px;">
         </div>
-    </div>
+
+        <div
+            class="absolute top-0 left-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2">
+        </div>
+
+        <div class="relative container mx-auto px-6 py-16">
+            <div class="text-center mb-12">
+                <div
+                    class="inline-flex items-center justify-center w-24 h-24 bg-white/10 backdrop-blur-sm rounded-3xl mb-6 border border-white/20 shadow-2xl">
+                    <span class="text-6xl">🏆</span>
+                </div>
+
+                <h4 class="text-2xl md:text-4xl italic text-white mb-4 leading-tight">
+                    "Un journal au coeur de la décision entre les élus locaux et les populations"
+                </h4>
+
+                <div class="flex items-center justify-center gap-2 mb-6">
+                    <div class="h-1 w-12 bg-white/30 rounded-full"></div>
+                    <div class="h-1 w-6 bg-white/50 rounded-full"></div>
+                    <div class="h-1 w-3 bg-white/70 rounded-full"></div>
+                </div>
+
+                <p class="text-white/90 text-xl md:text-2xl font-medium max-w-2xl mx-auto">
+                    Connecter les élus locaux avec leurs communautés
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8 mb-12 max-w-5xl mx-auto">
+                <div>
+                    <h5 class="text-white font-bold text-lg mb-4">Navigation</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#accueil" class="text-white/70 hover:text-white transition-colors">Accueil</a></li>
+                        <li><a href="#apropos" class="text-white/70 hover:text-white transition-colors">A propos</a>
+                        </li>
+                        <li><a href="#contact" class="text-white/70 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold text-lg mb-4">Magazine</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#magazine" class="text-white/70 hover:text-white transition-colors">Nos
+                                Rubriques</a>
+                        </li>
+                        {{-- <li><a href="#" class="text-white/70 hover:text-white transition-colors">Archives</a></li>
+                        --}}
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold text-lg mb-4">SAMCA</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#evenements" class="text-white/70 hover:text-white transition-colors">Nos
+                                Evénements</a>
+                        </li>
+                        <li><a href="#" target="_blank" referrer=" noreferrer"
+                                class="text-white/70 hover:text-white transition-colors">Site web</a></li>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold text-lg mb-4">Contact</h5>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2 text-white/70">
+                            <span>📱</span>
+                            <a href="tel:+22898905151" class="hover:text-white transition-colors">+228 98 90 51 51</a>
+                        </li>
+                        <li class="flex items-start gap-2 text-white/70">
+                            <span>📧</span>
+                            <a href="mailto:maires.dafrique@gmail.com"
+                                class="hover:text-white transition-colors break-all">maires.dafrique@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex justify-center gap-4 mb-8">
+                <a href="#"
+                    class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20 hover:bg-white/20 hover:scale-110 transition-all">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                </a>
+                <a href="#"
+                    class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20 hover:bg-white/20 hover:scale-110 transition-all">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                    </svg>
+                </a>
+                <a href="#"
+                    class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20 hover:bg-white/20 hover:scale-110 transition-all">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="h-px bg-white/20 mb-8"></div>
+
+            <div class="text-center">
+                <p class="text-white/60 text-sm">
+                    © 2026 <span class="font-semibold text-white/80">Maires d'Afrique</span> - Tous droits réservés
+                </p>
+                <p class="text-white/40 text-xs mt-2">
+                    Fait avec ❤️ pour les communes d'Afrique
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

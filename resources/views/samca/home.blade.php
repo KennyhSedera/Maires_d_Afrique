@@ -126,34 +126,65 @@
 <body class="min-h-screen bg-white overflow-x-hidden">
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 glass-strong shadow-lg border-b border-white/10">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between flex-wrap gap-4">
-                <a href="#accueil"
-                    class="flex items-center gap-3 px-2 bg-white rounded-lg font-bold text-2xl hover:scale-110 transition-all duration-300">
-                    <img src="{{ asset('images/logo.png') }}" alt="Logo SAMCA" class="w-auto h-12" />
+   <nav class="sticky top-0 z-50 glass-strong shadow-lg border-b border-white/10">
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#accueil"
+                class="flex items-center gap-3 px-2 bg-white rounded-lg font-bold text-2xl hover:scale-110 transition-all duration-300">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo Maires d'Afrique" class="w-auto h-12" />
+            </a>
+
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex gap-8">
+                <a href="#apropos" class="nav-link text-blue-800 hover:text-purple-800 font-semibold transition-colors">
+                    À propos
                 </a>
-                <div class="flex gap-8 flex-wrap">
-                    <a href="#apropos"
-                        class="nav-link text-blue-800 hover:text-purple-800 font-semibold transition-colors">
-                        À propos
-                    </a>
-                    <a href="#magazine"
-                        class="nav-link text-blue-800 hover:text-purple-800 font-semibold transition-colors">
-                        Magazine
-                    </a>
-                    <a href="#evenements"
-                        class="nav-link text-blue-800 hover:text-purple-800 font-semibold transition-colors">
-                        Événements
-                    </a>
-                    <a href="#contact"
-                        class="nav-link text-blue-800 hover:text-purple-800 font-semibold transition-colors">
-                        Contact
-                    </a>
-                </div>
+                <a href="#magazine"
+                    class="nav-link text-blue-800 hover:text-purple-800 font-semibold transition-colors">
+                    Magazine
+                </a>
+                <a href="#evenements"
+                    class="nav-link text-blue-800 hover:text-purple-800 font-semibold transition-colors">
+                    Événements
+                </a>
+                <a href="#contact" class="nav-link text-blue-800 hover:text-purple-800 font-semibold transition-colors">
+                    Contact
+                </a>
             </div>
+
+            <!-- Bouton Hamburger Mobile -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-white/20 transition-colors">
+                <svg class="w-6 h-6 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
         </div>
-    </nav>
+
+        <!-- Menu Mobile (caché par défaut) -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+            <a href="#apropos"
+                class="block px-4 py-3 text-blue-800 hover:text-purple-800 hover:bg-white/20 font-semibold rounded-lg transition-all">
+                À propos
+            </a>
+            <a href="#magazine"
+                class="block px-4 py-3 text-blue-800 hover:text-purple-800 hover:bg-white/20 font-semibold rounded-lg transition-all">
+                Magazine
+            </a>
+            <a href="#evenements"
+                class="block px-4 py-3 text-blue-800 hover:text-purple-800 hover:bg-white/20 font-semibold rounded-lg transition-all">
+                Événements
+            </a>
+            <a href="#contact"
+                class="block px-4 py-3 text-blue-800 hover:text-purple-800 hover:bg-white/20 font-semibold rounded-lg transition-all">
+                Contact
+            </a>
+        </div>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <section id="accueil" class="relative min-h-[80vh] flex items-center overflow-hidden ">
@@ -1053,5 +1084,43 @@
         </div>
     </footer>
 </body>
+<!-- Script pour le menu mobile -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        // Toggle menu au clic
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
+        // Fermer le menu si on clique en dehors
+        document.addEventListener('click', function(event) {
+            const isClickInsideMenu = mobileMenu.contains(event.target);
+            const isClickOnButton = mobileMenuButton.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickOnButton && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        });
+    });
+</script>
 
 </html>
